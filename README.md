@@ -6,9 +6,13 @@ each in its own folder as a Jupyter Notebook.
 ## Structure
 - `projects/<project_name>/notebook.ipynb`
 - optional `data/` with small sample datasets (<100MB)
-- `requirements.txt` or `environment.yml` for reproducibility
+- `environment.yml` for reproducibility
 
 ## Projects
-- Netflix Ratings – EDA & visualization
-- NYC Taxi – Data ingestion & feature analysis
+- Analyzing Students' Mental Health
+- Exploring NYC Public School Test Result Scores
+- Visualizing the History of Nobel Prize Winners
+- Analyzing Crime in Los Angeles
+- Investigating Netflix Movies
+- Customer Analytics: Preparing Data for Modeling
 
