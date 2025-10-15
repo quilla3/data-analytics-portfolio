@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_convert/
+.profile
+
+# OS/editor noise
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Envs
+.venv/
+venv/
+env/
+*.env
+
+# Data
+data/
+datasets/
+*.sqlite
+*.db
+
+# Outputs
+*.parquet
+*.feather
+*.h5
+*.zip
+*.gz
+
+# Plots/figures cache
+*.pdf
+*.png
+*.svg
+
