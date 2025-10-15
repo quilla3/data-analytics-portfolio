@@ -1,40 +1,18 @@
-# Python
+# Python / Jupyter
 __pycache__/
 *.pyc
-*.pyo
-
-# Jupyter
 .ipynb_checkpoints/
-*.ipynb_convert/
-.profile
 
-# OS/editor noise
+# OS / editor
 .DS_Store
-*.swp
 .vscode/
 .idea/
 
-# Envs
-.venv/
-venv/
-env/
-*.env
-
-# Data
-data/
-datasets/
+# allow small data, but ignore some possible binary and export cache (adjust as needed)
+*.zip
+*.gz
+*.h5
 *.sqlite
 *.db
 
-# Outputs
-*.parquet
-*.feather
-*.h5
-*.zip
-*.gz
-
-# Plots/figures cache
-*.pdf
-*.png
-*.svg
-
+.gitattributes
