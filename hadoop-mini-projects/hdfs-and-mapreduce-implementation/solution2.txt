@@ -1,0 +1,58 @@
+/* ============================================
+(1) List the names of files and folders included in a home folder in HDFS.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ cat task2-q1.py
+#!/usr/bin/env python3
+
+from snakebite.client import Client
+
+client = Client('localhost', 9000)
+for x in client.ls(['/user/bigdata']):
+	print(x['path'])
+
+bigdata@bigdata-VirtualBox:~/Desktop$ ./task2-q1.py
+/user/bigdata/A1-folder1
+/user/bigdata/A1-folder2
+
+/* ============================================
+(2) List the contents of the folders implemented in a step (2) of Task 1.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ cat task2-q2.py
+#!/usr/bin/env python3
+
+from snakebite.client import Client
+
+client = Client('localhost', 9000)
+for x in client.ls(['/user/bigdata']):
+	for y in client.ls([x['path']]):
+		print (y)
+
+bigdata@bigdata-VirtualBox:~/Desktop$ ./task2-q2.py
+{'file_type': 'f', 'permission': 420, 'path': '/user/bigdata/A1-folder1/A1-T1-File1.txt', 'length': 120, 'owner': 'bigdata', 'group': 'supergroup', 'block_replication': 1, 'modification_time': 1722927763197, 'access_time': 1722927762376, 'blocksize': 134217728}
+{'file_type': 'f', 'permission': 420, 'path': '/user/bigdata/A1-folder2/A1-T1-File2.txt', 'length': 119, 'owner': 'bigdata', 'group': 'supergroup', 'block_replication': 1, 'modification_time': 1722927775347, 'access_time': 1722927775269, 'blocksize': 134217728}
+
+/* ============================================
+(3) List the contents of the files included in the folders in step (3) of Task 1.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ cat task2-q3.py
+#!/usr/bin/env python3
+
+from snakebite.client import Client
+
+client = Client('localhost', 9000)
+
+files = []
+for x in client.ls(['/user/bigdata/A1-folder*/*txt']):
+	if x['file_type'] == 'f':
+		files.append(x['path'])
+
+for cat in client.text(files):
+	print (cat)
+
+
+bigdata@bigdata-VirtualBox:~/Desktop$ ./task2-q3.py
+b'A1-T1-File1.txt\nQuilla He 8158769\nTuesday lab 13:30-15:30\n\nThis is the 1st text file of assignment 1.\nEnd of Statement\n'
+b'A1-T1-File2.txt\nQuilla He 8158769\nTuesday lab 13:30-15:30\n\nThis is the 2nd text file of assignment 1.\nEnddddddddddddd\n'

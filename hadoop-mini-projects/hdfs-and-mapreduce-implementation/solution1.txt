@@ -1,0 +1,129 @@
+/* ============================================
+(1) Open Terminal window and navigate to a folder where the text files are stored. Use cat command to list both files in Terminal window
+============================================ */
+
+bigdata@bigdata-VirtualBox:~$ cd Desktop
+bigdata@bigdata-VirtualBox:~/Desktop$ cat A1* 
+A1-T1-File1.txt
+Quilla He 8158769
+Tuesday lab 13:30-15:30
+
+This is the 1st text file of assignment 1.
+End of Statement
+A1-T1-File2.txt
+Quilla He 8158769
+Tuesday lab 13:30-15:30
+
+This is the 2nd text file of assignment 1.
+Enddddddddddddd
+
+/* ============================================
+(2) Create two folders in a home folder of HDFS files system. The names of folders are up to you.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ $HADOOP_HOME/sbin/start-all.sh
+WARNING: Attempting to start all Apache Hadoop daemons as bigdata in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [bigdata-VirtualBox]
+Starting resourcemanager
+Starting nodemanagers
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -mkdir A1-folder1
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -mkdir A1-folder2
+
+/* ============================================
+(3) Upload the files created in step (1) to the folders created in step (2). Each file must be located in a different folder.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -put A1-T1-File1.txt A1-folder1
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -put A1-T1-File2.txt A1-folder2
+
+/* ============================================
+(4) List the contents of the folders created in a step (2).
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -ls A1-folder1
+Found 1 items
+-rw-r--r--   1 bigdata supergroup        120 2024-08-01 13:57 A1-folder1/A1-T1-File1.txt
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -ls A1-folder2
+Found 1 items
+-rw-r--r--   1 bigdata supergroup        119 2024-08-01 13:58 A1-folder2/A1-T1-File2.txt
+
+/* ============================================
+(5) List the contents of the files uploaded to HDFS.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -cat A1-folder1/A1-T1-File1.txt
+A1-T1-File1.txt
+Quilla He 8158769
+Tuesday lab 13:30-15:30
+
+This is the 1st text file of assignment 1.
+End of Statement
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -cat A1-folder2/A1-T1-File2.txt
+A1-T1-File2.txt
+Quilla He 8158769
+Tuesday lab 13:30-15:30
+
+This is the 2nd text file of assignment 1.
+Enddddddddddddd
+
+/* ============================================
+(6) Merge the files located in HDFS into one file located in your home folder in HDFS. An order in which the files are merged is up to you. A name of merged file is also up to you.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -getmerge A1-folder2/A1-T1-File2.txt A1-folder1/A1-T1-File1.txt mergeFile.txt
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -put mergeFile.txt 
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -ls
+Found 3 items
+drwxr-xr-x   - bigdata supergroup          0 2024-08-01 13:57 A1-folder1
+drwxr-xr-x   - bigdata supergroup          0 2024-08-01 13:58 A1-folder2
+-rw-r--r--   1 bigdata supergroup        239 2024-08-01 14:22 mergeFile.txt
+
+/* ============================================
+(7) List the contents of the file merged in HDFS
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -cat mergeFile.txt
+A1-T1-File2.txt
+Quilla He 8158769
+Tuesday lab 13:30-15:30
+
+This is the 2nd text file of assignment 1.
+Enddddddddddddd
+A1-T1-File1.txt
+Quilla He 8158769
+Tuesday lab 13:30-15:30
+
+This is the 1st text file of assignment 1.
+End of Statement
+
+/* ============================================
+(8) Download the merged file into a local file system.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -copyToLocal mergeFile.txt ./mergeFolder/mergeFile.txt
+
+/* ============================================
+(9) Remove all three files created in HDFS.
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -rm *.txt
+rm: `A1-T1-File1.txt': No such file or directory
+rm: `A1-T1-File2.txt': No such file or directory
+Deleted mergeFile.txt
+rm: `Solution1.txt': No such file or directory
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -rm A1-folder1/*.txt
+Deleted A1-folder1/A1-T1-File1.txt
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -rm A1-folder2/*.txt
+Deleted A1-folder2/A1-T1-File2.txt
+
+/* ============================================
+(10)Remove the folders created in a step (2).
+============================================ */
+
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -rmdir A1-folder1
+bigdata@bigdata-VirtualBox:~/Desktop$ hdfs dfs -rmdir A1-folder2
+bigdata@bigdata-VirtualBox:~/Desktop$ 
