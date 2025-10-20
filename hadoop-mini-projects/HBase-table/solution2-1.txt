@@ -1,0 +1,169 @@
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.2.6, rUnknown, Mon May 29 02:25:32 CDT 2017
+
+create 'JobApplication', 'APPLICATION', 'APPLICANT', 'EMPLOYER', 'POSITION'
+0 row(s) in 1.3040 seconds
+
+Hbase::Table - JobApplication
+
+put 'JobApplication', 'applicant|001', 'APPLICANT:applicant-number', '001'
+0 row(s) in 0.0890 seconds
+
+put 'JobApplication', 'applicant|001', 'APPLICANT:full-name', 'Helen Smith'
+0 row(s) in 0.0070 seconds
+
+put 'JobApplication', 'applicant|001', 'APPLICANT:date-of-birth', '1990-05-15'
+0 row(s) in 0.0020 seconds
+
+
+put 'JobApplication', 'applicant|002', 'APPLICANT:applicant-number', '002'
+0 row(s) in 0.0010 seconds
+
+put 'JobApplication', 'applicant|002', 'APPLICANT:full-name', 'Kelly Hillmen'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'applicant|002', 'APPLICANT:date-of-birth', '1988-11-22'
+0 row(s) in 0.0020 seconds
+
+
+put 'JobApplication', 'position|P001', 'POSITION:position-number', 'P001'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'position|P001', 'POSITION:title', 'Software Engineer'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'position|P001', 'POSITION:salary', '95000'
+0 row(s) in 0.0030 seconds
+
+
+put 'JobApplication', 'position|P002', 'POSITION:position-number', 'P002'
+0 row(s) in 0.0010 seconds
+
+put 'JobApplication', 'position|P002', 'POSITION:title', 'Data Scientist'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'position|P002', 'POSITION:salary', '85000'
+0 row(s) in 0.0050 seconds
+
+
+put 'JobApplication', 'employer|Business Solutions', 'EMPLOYER:ename', 'Business Solutions'
+0 row(s) in 0.0030 seconds
+
+put 'JobApplication', 'employer|Business Solutions', 'EMPLOYER:phone', '123456789'
+0 row(s) in 0.0030 seconds
+
+
+put 'JobApplication', 'employer|Technology Smart', 'EMPLOYER:ename', 'Technology Smart'
+0 row(s) in 0.0030 seconds
+
+put 'JobApplication', 'employer|Technology Smart', 'EMPLOYER:phone', '987654321'
+0 row(s) in 0.0040 seconds
+
+
+put 'JobApplication', 'application|A001|001|Business Solutions|P001', 'APPLICATION:application-number', 'A001'
+0 row(s) in 0.0050 seconds
+
+put 'JobApplication', 'application|A001|001|Business Solutions|P001', 'APPLICATION:total-skills', '5'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'application|A001|001|Business Solutions|P001', 'APPLICATION:education-level', 'Bachelors'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'application|A001|001|Business Solutions|P001', 'APPLICANT:applicant-number', '001'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'application|A001|001|Business Solutions|P001', 'EMPLOYER:ename', 'Business Solutions'
+0 row(s) in 0.0070 seconds
+
+put 'JobApplication', 'application|A001|001|Business Solutions|P001', 'POSITION:position-number', 'P001'
+0 row(s) in 0.0010 seconds
+
+
+put 'JobApplication', 'application|A002|002|Business Solutions|P002', 'APPLICATION:application-number', 'A002'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'application|A002|002|Business Solutions|P002', 'APPLICATION:total-skills', '7'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'application|A002|002|Business Solutions|P002', 'APPLICATION:education-level', 'Masters'
+0 row(s) in 0.0030 seconds
+
+put 'JobApplication', 'application|A002|002|Business Solutions|P002', 'APPLICANT:applicant-number', '002'
+0 row(s) in 0.0040 seconds
+
+put 'JobApplication', 'application|A002|002|Business Solutions|P002', 'EMPLOYER:ename', 'Business Solutions'
+0 row(s) in 0.0060 seconds
+
+put 'JobApplication', 'application|A002|002|Business Solutions|P002', 'POSITION:position-number', 'P002'
+0 row(s) in 0.0050 seconds
+
+
+put 'JobApplication', 'application|A003|001|Technology Smart|P001', 'APPLICATION:application-number', 'A002'
+0 row(s) in 0.0040 seconds
+
+put 'JobApplication', 'application|A003|001|Technology Smart|P001', 'APPLICATION:total-skills', '6'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'application|A003|001|Technology Smart|P001', 'APPLICATION:education-level', 'PhD'
+0 row(s) in 0.0050 seconds
+
+put 'JobApplication', 'application|A003|001|Technology Smart|P001', 'APPLICANT:applicant-number', '001'
+0 row(s) in 0.0020 seconds
+
+put 'JobApplication', 'application|A003|001|Technology Smart|P001', 'EMPLOYER:ename', 'Technology Smart'
+0 row(s) in 0.0040 seconds
+
+put 'JobApplication', 'application|A003|001|Technology Smart|P001', 'POSITION:position-number', 'P001'
+0 row(s) in 0.0020 seconds
+
+
+describe 'JobApplication'
+Table JobApplication is ENABLED
+JobApplication
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'APPLICANT', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
+{NAME => 'APPLICATION', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
+{NAME => 'EMPLOYER', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
+{NAME => 'POSITION', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
+4 row(s) in 0.0160 seconds
+
+
+scan 'JobApplication'
+ROW  COLUMN+CELL
+ applicant|001 column=APPLICANT:applicant-number, timestamp=1729141014696, value=001
+ applicant|001 column=APPLICANT:date-of-birth, timestamp=1729141014726, value=1990-05-15
+ applicant|001 column=APPLICANT:full-name, timestamp=1729141014711, value=Helen Smith
+ applicant|002 column=APPLICANT:applicant-number, timestamp=1729141014730, value=002
+ applicant|002 column=APPLICANT:date-of-birth, timestamp=1729141014738, value=1988-11-22
+ applicant|002 column=APPLICANT:full-name, timestamp=1729141014733, value=Kelly Hillmen
+ application|A001|001|Business Solutions|P001 column=APPLICANT:applicant-number, timestamp=1729141014814, value=001
+ application|A001|001|Business Solutions|P001 column=APPLICATION:application-number, timestamp=1729141014805, value=A001
+ application|A001|001|Business Solutions|P001 column=APPLICATION:education-level, timestamp=1729141014812, value=Bachelors
+ application|A001|001|Business Solutions|P001 column=APPLICATION:total-skills, timestamp=1729141014809, value=5
+ application|A001|001|Business Solutions|P001 column=EMPLOYER:ename, timestamp=1729141014821, value=Business Solutions
+ application|A001|001|Business Solutions|P001 column=POSITION:position-number, timestamp=1729141014828, value=P001
+ application|A002|002|Business Solutions|P002 column=APPLICANT:applicant-number, timestamp=1729141014843, value=002
+ application|A002|002|Business Solutions|P002 column=APPLICATION:application-number, timestamp=1729141014831, value=A002
+ application|A002|002|Business Solutions|P002 column=APPLICATION:education-level, timestamp=1729141014838, value=Masters
+ application|A002|002|Business Solutions|P002 column=APPLICATION:total-skills, timestamp=1729141014833, value=7
+ application|A002|002|Business Solutions|P002 column=EMPLOYER:ename, timestamp=1729141014850, value=Business Solutions
+ application|A002|002|Business Solutions|P002 column=POSITION:position-number, timestamp=1729141014858, value=P002
+ application|A003|001|Technology Smart|P001 column=APPLICANT:applicant-number, timestamp=1729141014883, value=001
+ application|A003|001|Technology Smart|P001 column=APPLICATION:application-number, timestamp=1729141014863, value=A002
+ application|A003|001|Technology Smart|P001 column=APPLICATION:education-level, timestamp=1729141014879, value=PhD
+ application|A003|001|Technology Smart|P001 column=APPLICATION:total-skills, timestamp=1729141014872, value=6
+ application|A003|001|Technology Smart|P001 column=EMPLOYER:ename, timestamp=1729141014887, value=Technology Smart
+ application|A003|001|Technology Smart|P001 column=POSITION:position-number, timestamp=1729141014891, value=P001
+ employer|Business Solutions column=EMPLOYER:ename, timestamp=1729141014771, value=Business Solutions
+ employer|Business Solutions column=EMPLOYER:phone, timestamp=1729141014781, value=123456789
+ employer|Technology Smart column=EMPLOYER:ename, timestamp=1729141014792, value=Technology Smart
+ employer|Technology Smart column=EMPLOYER:phone, timestamp=1729141014799, value=987654321
+ position|P001 column=POSITION:position-number, timestamp=1729141014741, value=P001
+ position|P001 column=POSITION:salary, timestamp=1729141014747, value=95000
+ position|P001 column=POSITION:title, timestamp=1729141014745, value=Software Engineer
+ position|P002 column=POSITION:position-number, timestamp=1729141014754, value=P002
+ position|P002 column=POSITION:salary, timestamp=1729141014767, value=85000
+ position|P002 column=POSITION:title, timestamp=1729141014756, value=Data Scientist
+9 row(s) in 0.0290 seconds
+
