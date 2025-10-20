@@ -4,7 +4,7 @@
 This project is to design, implement, and query HBase tables.
 
 ## Task Specification
-### Task 1 Design and Implementation of HBase Table
+### Task 1: Design and Implementation of HBase Table
 Consider a conceptual schema of sample data cube given below. The schema represents a data cube where applicants submit applications for positions offered by employers.
 
 ![schema1](schema1.png)
@@ -21,7 +21,7 @@ When your script is ready:
 
 Make sure your script runs without any errors.
 
-### Task 2 Querying HBase Table 
+### Task 2: Querying HBase Table 
 Consider a conceptual schema given below. The schema represents a data cube where students submit assignments and each submission consists of several files and it is related to one subject.
 
 ![schema2](schema2.png)
