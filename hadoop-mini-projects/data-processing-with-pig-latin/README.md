@@ -13,7 +13,7 @@ Open the files in a text editor to review their contents.
 
 Upload all three files to HDFS.
 
-Open a Terminal window and start the `Pig` command line interface by running `pig`. 
+Open a Terminal window and start the Pig command line interface by running command `pig`. 
 
 In the Pig CLI, perform the following tasks:
 
