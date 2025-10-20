@@ -35,15 +35,7 @@ Make sure your script runs without any errors.
 
 Consider the following description of a sample database domain.
 
-*We would like to store information about the employees, the projects they are assigned
-to, their programming skills and their employment record. An employee is described by
-an employee number and full name. An employee can be assigned to many projects. Some
-employees are not assigned to any projects. A project is identified by its name. If an
-employee is assigned to some projects then we need to keep information about a
-percentage contribution of an employee to each project. We also would like to record
-information about the programming languages that can be used by the employees. An
-employee can use none or many programming languages. An employment record consists
-of hire date, salary and employee number of a supervisor.*
+*We would like to store information about the employees, the projects they are assigned to, their programming skills and their employment record. An employee is described by an employee number and full name. An employee can be assigned to many projects. Some employees are not assigned to any projects. A project is identified by its name. If an employee is assigned to some projects then we need to keep information about a percentage contribution of an employee to each project. We also would like to record information about the programming languages that can be used by the employees. An employee can use none or many programming languages. An employment record consists of hire date, salary and employee number of a supervisor.*
 
 1. Create an internal table in Hive (in 0NF form) to store information about employees, their assigned projects, and their programming skills. Save your script as `solution4.hql`.
 
