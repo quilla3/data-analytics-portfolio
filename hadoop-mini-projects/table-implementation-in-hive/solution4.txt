@@ -1,0 +1,63 @@
+>>>  CREATE TABLE IF NOT EXISTS employee_projects ( 
+enumber INT, --employee number 
+full_name STRING, 
+programming_languages ARRAY<STRING>, 
+assigned_projects MAP<STRING, STRING>, 
+employment_record STRUCT<hire_date: DATE, salary: INT, supervisor: INT> 
+);
+No rows affected (0.05 seconds)
+>>>  
+>>>  
+>>>  INSERT INTO employee_projects 
+SELECT 1001, 'John Smith', 
+ARRAY('Python', 'Java'), 
+MAP('ProjectA', '50%', 'ProjectB', '75%'), 
+NAMED_STRUCT('hire_date', CAST('2020-01-10' AS DATE), 'salary', 80000, 'supervisor', 2003);
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+No rows affected (7.972 seconds)
+>>>  
+>>>  INSERT INTO employee_projects 
+SELECT 1002, 'Jane Handason', 
+ARRAY('C++', 'Ruby'), 
+MAP('ProjectA', '40%', 'ProjectC', '60%'), 
+NAMED_STRUCT('hire_date', CAST('2019-04-20' AS DATE), 'salary', 85000, 'supervisor', 2003);
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+No rows affected (12.37 seconds)
+>>>  
+>>>  INSERT INTO employee_projects 
+SELECT 1003, 'Alicia Brown', 
+ARRAY(NULL), 
+MAP('ProjectB', '90%', 'ProjectD', '10%'), 
+NAMED_STRUCT('hire_date', CAST('2021-07-12' AS DATE), 'salary', 72000, 'supervisor', 2001);
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+No rows affected (11.939 seconds)
+>>>  
+>>>  INSERT INTO employee_projects 
+SELECT 1004, 'Tim Johnson', 
+ARRAY('JavaScript', 'GO', 'C#'), 
+MAP(NULL, NULL), 
+NAMED_STRUCT('hire_date', CAST('2018-03-05' AS DATE), 'salary', 90000, 'supervisor', 2002);
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+No rows affected (12.568 seconds)
+>>>  
+>>>  INSERT INTO employee_projects 
+SELECT 1005, 'Allen Lee', 
+ARRAY(NULL), 
+MAP(NULL, NULL), 
+NAMED_STRUCT('hire_date', CAST('2022-05-10' AS DATE), 'salary', 60000, 'supervisor', 2004);
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+No rows affected (11.793 seconds)
+>>>  
+>>>  
+>>>  SELECT * FROM employee_projects;
++----------------------------+------------------------------+------------------------------------------+--------------------------------------+--------------------------------------------------------------+--+
+| employee_projects.enumber  | employee_projects.full_name  | employee_projects.programming_languages  | employee_projects.assigned_projects  |             employee_projects.employment_record              |
++----------------------------+------------------------------+------------------------------------------+--------------------------------------+--------------------------------------------------------------+--+
+| 1001                       | John Smith                   | ["Python","Java"]                        | {"ProjectA":"50%","ProjectB":"75%"}  | {"hire_date":"2020-01-10","salary":80000,"supervisor":2003}  |
+| 1002                       | Jane Handason                | ["C++","Ruby"]                           | {"ProjectA":"40%","ProjectC":"60%"}  | {"hire_date":"2019-04-20","salary":85000,"supervisor":2003}  |
+| 1003                       | Alicia Brown                 | NULL                                     | {"ProjectB":"90%","ProjectD":"10%"}  | {"hire_date":"2021-07-12","salary":72000,"supervisor":2001}  |
+| 1004                       | Tim Johnson                  | ["JavaScript","GO","C#"]                 | {}                                   | {"hire_date":"2018-03-05","salary":90000,"supervisor":2002}  |
+| 1005                       | Allen Lee                    | NULL                                     | {}                                   | {"hire_date":"2022-05-10","salary":60000,"supervisor":2004}  |
++----------------------------+------------------------------+------------------------------------------+--------------------------------------+--------------------------------------------------------------+--+
+5 rows selected (0.135 seconds)
+>>>  

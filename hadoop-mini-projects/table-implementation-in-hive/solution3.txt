@@ -1,0 +1,104 @@
+>>>  CREATE TABLE IF NOT EXISTS school ( 
+SchoolKey CHAR(5), 
+name STRING, 
+budget DECIMAL(10, 2) 
+) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+No rows affected (0.918 seconds)
+>>>  
+>>>  CREATE TABLE IF NOT EXISTS student ( 
+StudentKey CHAR(5), 
+snum INT, 
+first_name VARCHAR(30), 
+last_name VARCHAR(30), 
+SchoolKey CHAR(5) 
+) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+No rows affected (0.083 seconds)
+>>>  
+>>>  CREATE TABLE IF NOT EXISTS degree ( 
+DegreeKey CHAR(2), 
+name VARCHAR(50), 
+years INT 
+) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+No rows affected (0.073 seconds)
+>>>  
+>>>  CREATE TABLE IF NOT EXISTS subject ( 
+SubjectKey CHAR(6), 
+code STRING, 
+title STRING, 
+credits INT, 
+DegreeKey CHAR(2) 
+) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+No rows affected (0.174 seconds)
+>>>  
+>>>  CREATE TABLE IF NOT EXISTS enrolment ( 
+StudentKey CHAR(5), 
+SubjectKey CHAR(6), 
+enrolment_date DATE, 
+grade VARCHAR(30), 
+fee DECIMAL(10, 2) 
+) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+No rows affected (0.146 seconds)
+>>>  
+>>>  LOAD DATA LOCAL INPATH '/home/bigdata/Desktop/school.tbl' INTO TABLE school;
+No rows affected (0.637 seconds)
+>>>  LOAD DATA LOCAL INPATH '/home/bigdata/Desktop/student.tbl' INTO TABLE student;
+No rows affected (0.223 seconds)
+>>>  LOAD DATA LOCAL INPATH '/home/bigdata/Desktop/degree.tbl' INTO TABLE degree;
+No rows affected (0.2 seconds)
+>>>  LOAD DATA LOCAL INPATH '/home/bigdata/Desktop/subject.tbl' INTO TABLE subject;
+No rows affected (0.209 seconds)
+>>>  LOAD DATA LOCAL INPATH '/home/bigdata/Desktop/enrolment.tbl' INTO TABLE enrolment;
+No rows affected (0.18 seconds)
+>>>  
+>>>  SELECT * FROM school;
++-------------------+------------------------+----------------+--+
+| school.schoolkey  |      school.name       | school.budget  |
++-------------------+------------------------+----------------+--+
+| SCH01             | School of Engineering  | 50000.00       |
+| SCH02             | School of Science      | 60000.00       |
+| SCH03             | School of Business     | 45000.00       |
++-------------------+------------------------+----------------+--+
+3 rows selected (0.709 seconds)
+>>>  SELECT * FROM student;
++---------------------+---------------+---------------------+--------------------+--------------------+--+
+| student.studentkey  | student.snum  | student.first_name  | student.last_name  | student.schoolkey  |
++---------------------+---------------+---------------------+--------------------+--------------------+--+
+| S0001               | 1001          | Jane                | Doe                | SCH01              |
+| S0002               | 1002          | John                | Smith              | SCH02              |
+| S0003               | 1003          | Bob                 | Chan               | SCH03              |
+| S0004               | 1004          | Tom                 | Brown              | SCH02              |
++---------------------+---------------+---------------------+--------------------+--------------------+--+
+4 rows selected (0.084 seconds)
+>>>  SELECT * FROM degree;
++-------------------+----------------+---------------+--+
+| degree.degreekey  |  degree.name   | degree.years  |
++-------------------+----------------+---------------+--+
+| D1                | Undergraduate  | 4             |
+| D2                | Postgraduate   | 2             |
++-------------------+----------------+---------------+--+
+2 rows selected (0.066 seconds)
+>>>  SELECT * FROM subject;
++---------------------+---------------+--------------------------------------+------------------+--------------------+--+
+| subject.subjectkey  | subject.code  |            subject.title             | subject.credits  | subject.degreekey  |
++---------------------+---------------+--------------------------------------+------------------+--------------------+--+
+| SUB001              | ENGG955       | Engineering Research Methods         | 6                | D2                 |
+| SUB002              | INFO911       | Data Mining and Knowledge Discovery  | 6                | D2                 |
+| SUB003              | MGNT210       | Managing Across Cultures             | 6                | D1                 |
++---------------------+---------------+--------------------------------------+------------------+--------------------+--+
+3 rows selected (0.073 seconds)
+>>>  SELECT * FROM enrolment;
++-----------------------+-----------------------+---------------------------+------------------+----------------+--+
+| enrolment.studentkey  | enrolment.subjectkey  | enrolment.enrolment_date  | enrolment.grade  | enrolment.fee  |
++-----------------------+-----------------------+---------------------------+------------------+----------------+--+
+| S0001                 | SUB001                | 2024-02-01                | HD               | 3300.00        |
+| S0002                 | SUB002                | 2024-02-03                | D                | 3000.00        |
+| S0003                 | SUB003                | 2024-02-02                | C                | 3100.00        |
+| S0004                 | SUB001                | 2024-02-01                | P                | 3300.00        |
+| S0001                 | SUB002                | 2024-02-04                | D                | 3000.00        |
++-----------------------+-----------------------+---------------------------+------------------+----------------+--+
+5 rows selected (0.077 seconds)
