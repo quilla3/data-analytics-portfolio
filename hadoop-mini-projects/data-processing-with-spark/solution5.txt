@@ -1,0 +1,115 @@
+# data stream simulated by netcat
+
+bigdata@bigdata-VirtualBox:~/Desktop$ nc -lk 9999
+Sydney,25
+Wollongong,36
+Dapto,24
+Sydney,25
+Wollongong,34
+Dapto,26
+Dapto,22
+
+
+# applications and results of data stream processing
+
+>>> from pyspark.sql import SparkSession
+>>> from pyspark.sql.functions import split, avg
+>>> 
+>>> spark = SparkSession.builder.appName("AvgLocationTemperature").getOrCreate()
+>>> lines = spark.readStream.format("socket") \
+...                     .option("host", "localhost") \
+...                     .option("port", 9999) \
+...                     .load()
+>>> temperature_record = lines.select(
+...      split(lines.value, ",")[0].alias("location"), 
+...      split(lines.value, ",")[1].cast("float").alias("temperature")
+... )
+>>> avg_temperature = temperature_record.groupBy("location").agg(avg("temperature").alias("avg_temp"))
+>>> query = avg_temperature.writeStream \
+...             .outputMode("complete") \
+...             .format("console") \
+...             .start()
+-------------------------------------------                                     
+Batch: 0
+-------------------------------------------
++--------+--------+
+|location|avg_temp|
++--------+--------+
++--------+--------+
+
+-------------------------------------------                                     
+Batch: 1
+-------------------------------------------
++--------+--------+
+|location|avg_temp|
++--------+--------+
+|  Sydney|    25.0|
++--------+--------+
+
+-------------------------------------------                                     
+Batch: 2
+-------------------------------------------
++----------+--------+
+|  location|avg_temp|
++----------+--------+
+|Wollongong|    36.0|
+|    Sydney|    25.0|
++----------+--------+
+
+-------------------------------------------                                     
+Batch: 3
+-------------------------------------------
++----------+--------+
+|  location|avg_temp|
++----------+--------+
+|     Dapto|    24.0|
+|Wollongong|    36.0|
+|    Sydney|    25.0|
++----------+--------+
+
+-------------------------------------------                                     
+Batch: 4
+-------------------------------------------
++----------+--------+
+|  location|avg_temp|
++----------+--------+
+|     Dapto|    24.0|
+|Wollongong|    36.0|
+|    Sydney|    25.0|
++----------+--------+
+
+-------------------------------------------                                     
+Batch: 5
+-------------------------------------------
++----------+--------+
+|  location|avg_temp|
++----------+--------+
+|     Dapto|    24.0|
+|Wollongong|    35.0|
+|    Sydney|    25.0|
++----------+--------+
+
+-------------------------------------------                                     
+Batch: 6
+-------------------------------------------
++----------+--------+
+|  location|avg_temp|
++----------+--------+
+|     Dapto|    25.0|
+|Wollongong|    35.0|
+|    Sydney|    25.0|
++----------+--------+
+
+-------------------------------------------                                     
+Batch: 7
+-------------------------------------------
++----------+--------+
+|  location|avg_temp|
++----------+--------+
+|     Dapto|    24.0|
+|Wollongong|    35.0|
+|    Sydney|    25.0|
++----------+--------+
+
+
+
