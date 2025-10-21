@@ -1,19 +1,37 @@
 # Data Analysis Portfolio
 
-This repository collects my data analysis projects (mostly from DataCamp and self-initiated),
-each in its own folder as a Jupyter Notebook.
+This repository is a growing collection of **data analysis projects** and **workbooks** that demonstrate practical skills in data cleaning, analysis, and visualization using Python and SQL.  
 
-## Structure
-- `projects/<project_name>/notebook.ipynb`
-- optional `data/` with small sample datasets (<100MB)
-- `environment.yml` for reproducibility
+Each project explores real-world datasets, applying statistical and analytical techniques to extract insights and tell data-driven stories.
 
-## Projects
-| Project Name | Project Description | Skills Applied |
-|---------------|----------------------|------------------|
-| Analyzing Students' Mental Health | Use data manipulation skills to perform exploratory data analysis on a dataset around student mental health. | SQL |
-| Exploring NYC Public School Test Result Scores | Use data manipulation and summary statistics to analyze test scores across New York City's public schools. | Python |
-| Visualizing the History of Nobel Prize Winners | Explore a dataset containing a century's worth of Nobel Laureates. Who won? Who got snubbed? Use data manipulation and visualization skills to explore the history of this coveted prize. | Python |
-| Analyzing Crime in Los Angeles | Serve as a data detective, supporting the Los Angeles Police Department (LAPD) in analyzing crime data to guide how they should allocate resources to protect the people of their city. Find out when and where crime is most likely to occur, along with the types of crimes commonly committed in LA. | Python |
-| Investigating Netflix Movies | Explore Netflix movie data and perform exploratory data analysis for a production company to uncover insights about movies from a particular decade. Apply the foundational Python skills learned in Introduction to Python and Intermediate Python by manipulating and visualizing movie data. | Python |
-| Customer Analytics: Preparing Data for Modeling | You've been hired by a major online data science training provider to store their data much more efficiently, so they can create a model that predicts if course enrollees are looking for a job. You'll convert data types, create ordered categories, and filter ordered categorical data so the data is ready for modeling. | Python |
+---
+
+## Projects Overview
+
+| Project Name | Description |
+|---------------|-------------|
+| [01 Analyzing Students' Mental Health](01-analyzing-students-mental-health) | Explored relationships between international students’ length of stay and their mental health diagnostic scores, summarizing key trends through aggregated indicators. |
+| [02 Exploring NYC Public School Test Result Scores](02-exploring-nyc-public-school-test-result-scores) | Analyzed SAT performance across NYC schools to identify top-performing institutions, borough variations, and score distribution patterns. |
+| [03 Visualizing the History of Nobel Prize Winners](03-visualizing-the-history-of-nobel-prize-winners) | Investigated over a century of Nobel laureates to uncover demographic and temporal patterns, including gender trends and multi-award winners. |
+| [04 Analyzing Crime in Los Angeles](04-analyzing-crime-in-los-angeles) | Analyzed Los Angeles crime data to find when and where crimes are most likely to occur and identified high-risk areas and time periods. |
+| [05 Investigating Netflix Movies](05-investigating-netflix-movies) | Examined Netflix movie data from the 1990s to identify typical durations and the frequency of short action films. |
+| [06 Customer Analytics: Preparing Data for Modeling](06-customer-analytics-preparing-data-for-modeling) | Optimized customer training data for predictive modeling by transforming data types, creating ordered categories, and filtering relevant records. |
+| [Hadoop Projects](hadoop-mini-projects) | Hands-on big data projects covering HDFS, MapReduce, Hive, HBase, Pig, and Spark， focusing on distributed storage, data warehousing, and stream processing. |
+
+---
+
+## Technologies Used
+
+- **Python**: data manipulation, analysis, and visualization (Pandas, NumPy, Matplotlib, Seaborn)  
+- **SQL**: querying and aggregating structured datasets  
+- **Jupyter Notebook**: interactive exploratory analysis and reproducible workflows  
+- **Hadoop Ecosystem**: distributed and parallel data processing with:
+  - HDFS, MapReduce, Hive, HBase, Pig, and Spark  
+- **Data Processing & Modeling Tools**: schema design, data transformation, type optimization  
+- **Version Control**: Git and GitHub for versioning and documentation  
+
+---
+
+📘 Each project folder contains its own `README.md` with detailed objectives, analysis steps, and code explanations.  
+
+New data workbooks will continue to be added as this portfolio expands.
