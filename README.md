@@ -1,4 +1,4 @@
-# Data Analysis Portfolio
+# Data Analytics Portfolio
 
 This repository is a growing collection of **data analysis projects** and **workbooks** that demonstrate practical skills in data cleaning, analysis, and visualization using Python and SQL.  
 
