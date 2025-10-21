@@ -11,5 +11,3 @@ Explore and analyze the `students` data to see how the length of stay (`stay`) i
 - The `count_int` column should be the number of international students for each length of stay.
 - Sort the results by the length of stay in **descending order**.
 
-Note: Creating new cells in the workbook will rename the DataFrame. Make sure that your final solution uses the name `df`.
-
