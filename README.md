@@ -6,7 +6,7 @@ Each project explores real-world datasets, applying statistical and analytical t
 
 ---
 
-## Projects Overview
+## 📊 Projects Overview
 
 | Project Name | Description |
 |---------------|-------------|
@@ -20,7 +20,7 @@ Each project explores real-world datasets, applying statistical and analytical t
 
 ---
 
-## Technologies Used
+## 🧰 Technologies Used
 
 - **Python**: data manipulation, analysis, and visualization (Pandas, NumPy, Matplotlib, Seaborn)  
 - **SQL**: querying and aggregating structured datasets  
