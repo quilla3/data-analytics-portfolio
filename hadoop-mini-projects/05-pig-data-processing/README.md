@@ -1,7 +1,7 @@
-# Data Processing with Pig Latin
+# Pig Latin Data Processing
 
 ## Scope
-This project is to get familiar with Pig Latin.
+This mini-project introduces Pig Latin for analyzing data stored in HDFS. The task includes loading datasets into Pig, writing queries to filter and project fields, performing joins or anti-joins to find unmatched records, and grouping and aggregating results in the Pig shell.
 
 ## Task Specification
 Consider the following logical schema of one-dimensional data cube.
@@ -28,3 +28,6 @@ In the Pig CLI, perform the following tasks:
 5. Find the total number of accounts opened in each bank whose headquarters are in Japan (`hq-country`).
 
 When finished, copy everything from your Terminal window (all Pig commands, messages, and query results) and paste it into a text file named `solution3.txt`.
+
+## Deliverables
+- `solution3.txt` – Pig commands, messages, and query results

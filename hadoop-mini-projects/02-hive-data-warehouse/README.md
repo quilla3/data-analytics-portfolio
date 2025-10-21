@@ -1,8 +1,13 @@
-# Conceptual modelling of a data warehouse
+# HQL Data Warehouse Modelling and Implementation
 
 ## Scope
-This project includes implementing a data warehouse as a collection of internal tables in HQL and the implementation of 0NF Hive tables.
+This mini-project focuses on designing and implementing a data warehouse using Hive Query Language (HQL).  
+It aims to develop practical skills in data modelling, schema design, and Hive implementation.
 
+- Task 1 involves transforming a conceptual schema into a snowflake schema, applying surrogate keys, and creating fact and dimension tables as internal Hive tables.  
+- Task 2 focuses on creating a 0NF Hive table to store complex employee-related data, using `CREATE`, `INSERT`, and `SELECT` operations to model real-world relationships.
+
+Together, these tasks provide experience in logical design, Hive scripting, and managing internal tables within a data warehouse environment.
 ## Task Specification
 ### Task 1: Implementation of A Data Warehouse As A Collection of Internal Tables In Hive
 
@@ -53,3 +58,8 @@ Consider the following description of a sample database domain.
 * Run your script `solution4.hql` using a command line interface `Beeline`, and save the output (including all query results) to `solution4.txt`.
 
 Make sure your script runs without any errors.
+
+## Deliverables
+- `solution3.bmp` – Snowflake schema diagram  
+- `solution3.txt` – Beeline execution report for Task 1  
+- `solution4.txt` – Beeline execution report for Task 2

@@ -1,7 +1,9 @@
-# Querying A Data Cube
+# Querying a Data Cube in Hive
 
 ## Scope
-This project is to perform queries in Hive using different clauses and operators.
+This mini-project focuses on performing analytical queries on a data cube in Hive. The goal is to practice using advanced HiveQL clauses and operators to aggregate and analyze multidimensional data.
+
+Through this project, you will gain practical experience in querying data cubes, performing multi-level aggregations, and applying analytical SQL features in Hive.
 
 ## Task Specification
 Consider the following logical schema implementing a two-dimensional data cube.
@@ -47,3 +49,7 @@ Implement the following SQL queries as `SELECT` statements using window partitio
 
 When ready, save your `SELECT` statements in a file `solution1.hql`. Then, process a
 script file `solution1.hql` and save the results in a report `solution1.txt`.
+
+## Deliverables
+- `solution1.hql` – HiveQL script containing all `SELECT` queries  
+- `solution1.txt` – Beeline execution report showing query results

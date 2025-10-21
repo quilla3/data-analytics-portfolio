@@ -1,7 +1,7 @@
-# Data processing with Spark
+# Data Processing and Stream Processing with Spark
 
 ## Scope
-This project consists of two tasks, including data processing and structured stream processing with Spark.
+This mini-project covers two parts: batch data processing and structured stream processing with Spark. You will define schemas and load CSVs into DataFrames, run aggregations with both the DataFrame API and SQL (via temporary views), and build a simple structured streaming job that computes rolling averages from a live netcat stream.
 
 ## Task Specification
 ### Task 1: Data Processing With Spark
@@ -79,3 +79,7 @@ Dapto,24
       * The `netcat` data stream.
       * The PySpark application output (including code and results).
     * Paste everything into a file named `solution5.txt`.
+
+## Deliverables
+- `solution4.txt` – PySpark commands and results for Task 1  
+- `solution5.txt` – Netcat stream, PySpark streaming code, and results for Task 2

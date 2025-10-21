@@ -1,7 +1,7 @@
-# Design and implementation of HBase table
+# HBase Table Design and Implementation
 
 ## Scope
-This project is to design, implement, and query HBase tables.
+This mini-project focuses on designing, implementing, and querying HBase tables using the HBase shell. You will practice creating tables with column families, loading sample data, retrieving multi-version cells, performing updates, and altering schemas.
 
 ## Task Specification
 ### Task 1: Design and Implementation of HBase Table
@@ -45,3 +45,7 @@ Save all your commands in a new script called `solution2-2.hb`. Note that each q
 When finished, run your script `solution2-2.hb` in the HBase shell, and save the output from processing (including results of all queries) in `solution2-2.txt`.
 
 Make sure your script runs without any errors.
+
+## Deliverables
+- `solution2-1.txt` – Execution report for Task 1  
+- `solution2-2.txt` – Execution report for Task 2

@@ -1,7 +1,11 @@
-# Implementation of HDFS and MapReduce Applications
+# HDFS and MapReduce Applications
 
 ## Scope
-This assignment includes the tasks related to implementation of HDFS applications and to implementation of MapReduce applications. Task 1 and 2 are to use command line or Python interface to interact with HDFS, while task 3 and 4 require implementation of Hadoop streaming applications in Python.
+This mini-project focuses on implementing HDFS and MapReduce applications using both command-line tools and Python.
+- Tasks 1 and 2 introduce how to interact with the Hadoop Distributed File System (HDFS) — first through the command line, and then via the Python Snakebite client.
+- Tasks 3 and 4 extend these concepts by developing MapReduce streaming applications in Python, demonstrating how to process and analyze data programmatically within the Hadoop ecosystem.
+
+Together, these tasks provide hands-on experience in managing files and directories in HDFS, transferring data between local and distributed environments, developing and executing Python-based MapReduce jobs, and verifying the output using Hadoop Streaming.
 
 ## Task Specification
 ### Task 1: Command Line Interface to HDFS
@@ -157,3 +161,9 @@ Save your solution in the files `mapper4.py` and `reducer4.py`.
 8. Show the results that your program writes to HDFS.
 
 Finally, copy everything from your Terminal window (commands and results) and paste it into a file called `solution4.txt`.
+
+## Deliverables
+- `solution1.txt` – Output and commands from HDFS operations using the command line  
+- `solution2.txt` – Python code and output from HDFS access via Snakebite  
+- `solution3.txt` – Execution log and output from Task 3  
+- `solution4.txt` – Execution log and output from Task 4  
