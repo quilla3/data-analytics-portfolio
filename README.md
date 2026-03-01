@@ -16,6 +16,7 @@ Each project explores real-world datasets, applying statistical and analytical t
 | [04 Analyzing Crime in Los Angeles](04-analyzing-crime-in-los-angeles) | Analyzed Los Angeles crime data to find when and where crimes are most likely to occur and identified high-risk areas and time periods. |
 | [05 Investigating Netflix Movies](05-investigating-netflix-movies) | Examined Netflix movie data from the 1990s to identify typical durations and the frequency of short action films. |
 | [06 Customer Analytics: Preparing Data for Modeling](06-customer-analytics-preparing-data-for-modeling) | Optimized customer training data for predictive modeling by transforming data types, creating ordered categories, and filtering relevant records. |
+| [07 Impact Analysis of GoodThought NGO Initiatives](07-impact-analysis-of-GoodThought-NGO-Initiatives) | Dive into a PostgreSQL database to analyze key metrics from 2010 to 2023, track donations, and assess program effectiveness for a NGO. |
 | [Hadoop Projects](hadoop-mini-projects) | Hands-on big data projects covering HDFS, MapReduce, Hive, HBase, Pig, and Spark， focusing on distributed storage, data warehousing, and stream processing. |
 
 ---
